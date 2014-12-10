@@ -33,3 +33,20 @@ dependencies {
     testCompile ("org.spockframework:spock-core:0.7-groovy-2.0") 
 
 }
+
+configurations {
+    all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+        exclude group: "commons-logging"
+        exclude module: "slf4j-log4j12"
+        exclude module: "hibernate-jpa-2.0-api"
+    }
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        if (details.requested.group == 'org.springframework') {
+            details.useVersion '4.1.0.RELEASE'
+        }
+    }
+}
