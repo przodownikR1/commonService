@@ -19,6 +19,7 @@ dependencies {
     compile("org.projectlombok:lombok:${lombokVersion}")
     compile("com.google.guava:guava:${guavaVersion}")
     compile("pl.java.scalatech:basicEntity:${basicEntityVersion}")
+    compile("pl.java.scalatech:basicEntity:${basicEntityVersion}:source")
     
     compile("org.slf4j:slf4j-api:$slf4jVersion")
     runtime("ch.qos.logback:logback-classic:$logbackVersion")
