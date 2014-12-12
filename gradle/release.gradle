@@ -57,8 +57,8 @@ publishing {
             logger.quiet "  url : ${url}  ,  group : ${group}   ,  version : ${version}"  
             
             credentials { 
-                username = '${nexusUsername}'
-                password = '${nexusPassword}'
+                username = 'slawek'
+                password = 'slawek'
             }
         }
     }
