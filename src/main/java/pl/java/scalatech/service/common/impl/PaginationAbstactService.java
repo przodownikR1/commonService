@@ -19,7 +19,7 @@ import pl.java.scalatech.entity.common.PKNature;
 import pl.java.scalatech.service.common.PaginationService;
 
 @Slf4j
-public abstract class PaginationAbstactService<T extends PKNature<K>, K extends Serializable> implements PaginationService<T, K> {
+public abstract class PaginationAbstactService<T extends PKNature> implements PaginationService<T> {
     
     private ObjectMapper objectMapper = new ObjectMapper();
     
@@ -73,7 +73,7 @@ public abstract class PaginationAbstactService<T extends PKNature<K>, K extends 
     }
 
     @Override
-    public T findById(K id) {
+    public T findById(Long id) {
         return repository.findOne(id);
     }
 

@@ -1,15 +1,13 @@
 
 package pl.java.scalatech.service.common;
 
-import java.io.Serializable;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import pl.java.scalatech.entity.common.PKNature;
 
 
-public interface PaginationService<T extends PKNature<K>, K extends Serializable> {
+public interface PaginationService<T extends PKNature> {
 
     Page<T> findPageByCondition(Pageable pageable);
 
@@ -25,7 +23,7 @@ public interface PaginationService<T extends PKNature<K>, K extends Serializable
 
     T update(T t);
 
-    T findById(K id);
+    T findById(Long id);
     
     long count();
 
